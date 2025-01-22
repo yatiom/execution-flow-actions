@@ -80,3 +80,11 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
+
+  report:
+    if: failure()
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Output information
+        run: echo "Deploy job failed so we run report"
+
